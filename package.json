@@ -11,7 +11,9 @@
     "start": "nodemon",
     "prebuild": "rm -rf dist",
     "build": "tsc",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "docker:build": "npm run build && docker build -t arzyu/beambox-server .",
+    "docker:run": "docker run -p 8080:8080 -d arzyu/beambox-server"
   },
   "dependencies": {
     "@types/koa": "^2.0.49",
