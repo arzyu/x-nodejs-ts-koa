@@ -9,6 +9,7 @@
   ],
   "scripts": {
     "start": "nodemon",
+    "start:debug": "node --inspect-brk -r ts-node/register src/index.ts",
     "prebuild": "rm -rf dist",
     "build": "tsc",
     "prepare": "npm run build",
@@ -20,6 +21,7 @@
     "koa": "^2.7.0"
   },
   "devDependencies": {
+    "@types/node": "^18.8.3",
     "nodemon": "^1.19.1",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
