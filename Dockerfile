@@ -1,8 +1,9 @@
-FROM node:12-alpine
+FROM node:18-alpine
 WORKDIR /app-server
 
 COPY package.json package-lock.json ./
-RUN npm install --production
+# https://github.com/npm/cli/issues/4027
+RUN npm install --omit=dev --ignore-scripts
 
 COPY dist ./dist
 EXPOSE 8080

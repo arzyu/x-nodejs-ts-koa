@@ -13,8 +13,9 @@
     "prebuild": "rimraf dist # rm -rf dist",
     "build": "tsc",
     "prepare": "npm run build",
-    "docker:build": "npm run build && docker build -t arzyu/beambox-server .",
-    "docker:run": "docker run -p 8080:8080 -d arzyu/beambox-server"
+    "docker:build": "npm run build && docker build -t $npm_package_name .",
+    "docker:run": "docker run -p 8080:8080 -d $npm_package_name",
+    "docker:clean": "docker container rm -f $(docker ps -aqf \"ancestor=$npm_package_name\") && docker image rm $npm_package_name"
   },
   "dependencies": {
     "@types/koa": "^2.13.5",
