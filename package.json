@@ -18,10 +18,10 @@
     "docker:clean": "docker container rm -f $(docker ps -aqf \"ancestor=$npm_package_name\") && docker image rm $npm_package_name"
   },
   "dependencies": {
-    "@types/koa": "^2.13.5",
     "koa": "^2.13.4"
   },
   "devDependencies": {
+    "@types/koa": "^2.13.5",
     "@types/node": "^18.8.3",
     "nodemon": "^2.0.20",
     "rimraf": "^3.0.2",
