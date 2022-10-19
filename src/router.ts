@@ -2,8 +2,6 @@ import Router from "@koa/router";
 
 const router = new Router();
 
-router.get("/", (ctx) => {
-  ctx.body = "index";
-});
+require("./routes/index").register(router);
 
 export { router };
