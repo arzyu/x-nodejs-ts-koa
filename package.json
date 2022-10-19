@@ -8,8 +8,8 @@
     "dist"
   ],
   "scripts": {
-    "start": "nodemon",
-    "start:debug": "node --inspect-brk -r ts-node/register src/index.ts",
+    "start": "nodemon --watch ./src --ext ts --exec \"ts-node src/index.ts\"",
+    "start:debug": "NODE_OPTIONS=\"--inspect-brk\" ts-node src/index.ts",
     "prebuild": "rimraf dist # rm -rf dist",
     "build": "tsc",
     "prepare": "npm run build",

@@ -8,5 +8,8 @@
     "baseUrl": "./",
     "outDir": "./dist"
   },
-  "files": ["src/index.ts"]
+  "include": ["src/index.ts"],
+  "ts-node": {
+    "files": true
+  }
 }
